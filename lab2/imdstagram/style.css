@@ -15,4 +15,5 @@ section{
 }
 section div img{
     flex: 0 1 200px;
+    align-content: space-between;
 }
