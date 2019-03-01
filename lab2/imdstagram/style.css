@@ -4,5 +4,7 @@
 nav {
     display: flex;
     flex-wrap: wrap;
-
+}
+nav ul li {
+    list-style-type: none;
 }
