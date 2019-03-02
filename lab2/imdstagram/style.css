@@ -10,8 +10,8 @@ nav ul li {
 }
 section{
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    /*flex flow: flex-direction flex-wrap*/
+    flex-flow: row wrap;
 }
 section div img{
     flex: 0 1 200px;
