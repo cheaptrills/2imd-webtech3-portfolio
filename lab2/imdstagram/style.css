@@ -12,8 +12,9 @@ section{
     display: flex;
     /*flex flow: flex-direction flex-wrap*/
     flex-flow: row wrap;
+    justify-content: space-around;
 }
 section div img{
     flex: 0 1 200px;
-    align-content: space-between;
+    /*align-content: space-between;*/
 }
