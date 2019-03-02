@@ -3,9 +3,13 @@
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
 }
-main {
+main.grid{
     /*background-img: url("bg.jpg");*/
+    display: grid;
     background-color: blue;
     height: 100vh;
     width: 100vw;
+}
+div {
+    border: 1px solid #000;
 }
