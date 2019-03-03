@@ -42,8 +42,15 @@ div p {
     align-items: center;
     justify-content: center;
 }
+div.qr {
+    display: flex;
+    flex-flow: row no-wrap;
+    flex: 1 1 100px;
+}
 div img {
-    display: inline-flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
 }
 div p.price {
     flex: 0 0 100%;
