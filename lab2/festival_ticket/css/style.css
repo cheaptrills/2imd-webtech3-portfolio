@@ -58,6 +58,42 @@ div p.price {
 .hidden {
     display: none;
 }
-@media (min-width: 700px){
-    
+@media (min-width: 800px){
+    main.grid{
+        grid-template: 9 1fr / 3 1fr;
+        height: 50%;
+    }
+    div.grid_titel, div.qr, div.info{
+        width: 100%;
+    }
+    div.grid_titel{
+        grid-column: 1 / span 5;
+        grid-row: 1 / span 1;
+        background: transparent;
+        color: #000;
+    }
+    div.grid_titel h1{
+        margin-bottom: -50px;
+        font-size: 50px;
+    }
+    div.info{
+        grid-column: 1 / span 5;
+        grid-row: 2 / span 1;
+    }
+    div p {
+        flex: 0 0 33.33%;
+    }
+    div p.price{
+        flex: 0 0 33.33%;
+    }
+    div.qr{
+        display: flex;
+        grid-column: 6 / span 1;
+        grid-row: 1 / span 2;
+    }
+    .hidden {
+        display: grid;
+        flex: 0 0 100%;
+        grid-row: 3 / span 1;
+    }
 }
