@@ -60,7 +60,7 @@ div p.price {
 }
 @media (min-width: 800px){
     main.grid{
-        grid-template: 9 1fr / 3 1fr;
+        grid-template: 9 1fr / 4 1fr;
         height: 50%;
     }
     div.grid_titel, div.qr, div.info{
@@ -68,17 +68,22 @@ div p.price {
     }
     div.grid_titel{
         grid-column: 1 / span 5;
-        grid-row: 1 / span 1;
+        grid-row: 1 / span 2;
         background: transparent;
         color: #000;
     }
     div.grid_titel h1{
-        margin-bottom: -50px;
-        font-size: 50px;
+        grid-row: 2 / span 1;
+        margin-top: -150px;
+        font-size: 90px;
+    }
+    div.grid_titel h2{
+        grid-row: 1 / span 1;
     }
     div.info{
         grid-column: 1 / span 5;
-        grid-row: 2 / span 1;
+        grid-row: 3 / span 1;
+        font-weight: bolder;
     }
     div p {
         flex: 0 0 33.33%;
@@ -89,7 +94,7 @@ div p.price {
     div.qr{
         display: flex;
         grid-column: 6 / span 1;
-        grid-row: 1 / span 2;
+        grid-row: 1 / span 3;
     }
     .hidden {
         display: grid;
