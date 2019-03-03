@@ -58,3 +58,6 @@ div p.price {
 .hidden {
     display: none;
 }
+@media (min-width: 700px){
+    
+}
