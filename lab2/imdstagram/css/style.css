@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+}
+nav ul {
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+}
+nav ul li{
+    list-style-type: none;
+    flex: 0 1 150px;
+    margin: 0%;
+    justify-items: center;
+}
+nav ul h2.logo{
+    display: flex;
+    flex: 1 0 300px;
+    order: 1;
+}
+nav ul a{
+    display: inline-block;
+    order: 2;
+}
+nav ul h2, nav ul a {
+    background-color: tomato;
+}
+section{
+    display: flex;
+    /*flex flow: flex-direction flex-wrap*/
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+section div img{
+    flex: 0 1 200px;
+}
