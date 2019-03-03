@@ -3,9 +3,6 @@
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
 }
-body{
-    
-}
 main.grid{
     display: grid;
     /*background-color: blue;*/
@@ -17,8 +14,20 @@ div {
     border: 1px solid #000;
 }
 div.grid_titel{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     background: #000;
     color: #FFF;
+}
+div.grid_titel h1{
+    margin-bottom: -100px;
+    font-size: 50px;
+}
+div.grid_titel h2{
+    font-weight: lighter;
+    font-size: 18px;
 }
 div.info {
     display: flex;
@@ -32,6 +41,9 @@ div p {
     /*This centers the items (p) in their div.*/
     align-items: center;
     justify-content: center;
+}
+div img {
+    display: inline-flex;
 }
 div p.price {
     flex: 0 0 100%;
