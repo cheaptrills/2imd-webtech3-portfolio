@@ -8,9 +8,9 @@ nav ul {
 }
 nav ul li{
     list-style-type: none;
+    /*flex: flex-grow flex-shrink flex-basis*/
     flex: 0 1 150px;
     margin: 0%;
-    justify-items: center;
 }
 nav ul h2.logo{
     display: flex;
