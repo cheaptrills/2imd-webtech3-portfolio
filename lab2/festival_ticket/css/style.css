@@ -26,6 +26,8 @@ div.info {
 }
 div p {
     border: 1px solid #000;
+    flex: 0 0 50%;
+    margin: 0;
 }
 .hidden {
     display: none;
