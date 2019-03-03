@@ -3,3 +3,7 @@ At the moment of writing am I a 2IMD student of Thomas More University. Below yo
 ##Lab 1
 [Link to folder "lab1"](https://github.com/haeirene/2imd-webtech3-portfolio/tree/master/lab1)
 ##Lab 2
+[Link to folder "lab2"](https://github.com/haeirene/2imd-webtech3-portfolio/tree/master/lab1)
+* [Link to assignment "Festival ticket"](https://github.com/haeirene/2imd-webtech3-portfolio/tree/master/lab2/festival_ticket)
+* [Link to assignment "IMDstagram"](https://github.com/haeirene/2imd-webtech3-portfolio/tree/master/lab2/imdstagram)
+* [Link to screenshots of followed tutorials](https://github.com/haeirene/2imd-webtech3-portfolio/tree/master/lab2/screenshot)
