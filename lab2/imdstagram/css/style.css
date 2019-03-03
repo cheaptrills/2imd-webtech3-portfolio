@@ -16,11 +16,9 @@ nav ul li{
     justify-content: center;
 }
 nav ul li h2{
-    /*flex: 1 0 100vw;
-    order: 1;*/
     display: block;
     margin-left: -50px;
-    width: 99vw;
+    width: 100vw;
     text-align: center;
 }
 nav ul a{
@@ -31,10 +29,29 @@ section{
     /*flex flow: flex-direction flex-wrap*/
     flex-flow: row wrap;
     justify-content: space-around;
+
 }
 section div img{
-    flex: 0 1 200px;
+    flex: 0 1 300px;
 }
 @media (min-width: 750px){
-
+    nav ul li{
+        display: flex;
+    }
+    nav ul li.typography, nav ul li.ui{
+        display: flex;
+        order: -1;
+        flex: 0 0 20%;
+    }
+    nav ul li h2{
+        flex: 1 0 20%;
+        width: 20%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+    nav ul li.branding, nav ul li.graffiti{
+        order: 5;
+        flex: 0 0 20%;
+    }
 }
