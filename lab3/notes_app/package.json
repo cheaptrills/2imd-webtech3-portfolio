@@ -1,0 +1,22 @@
+{
+  "name": "webtech3-portfolio",
+  "version": "1.0.0",
+  "description": "At the moment of writing am I a 2IMD student of Thomas More University. Below you can find all my tasks which are connected to the course \"Webtech 3\".\r ## Lab 1\r [Link to folder \"lab1\"](https://github.com/haeirene/2imd-webtech3-portfolio/tree/master/lab1)\r ## Lab 2\r [Link to folder \"lab2\"](https://github.com/haeirene/2imd-webtech3-portfolio/tree/master/lab1)\r * [Link to assignment \"Festival ticket\"](https://github.com/haeirene/2imd-webtech3-portfolio/tree/master/lab2/festival_ticket)\r * [Link to assignment \"IMDstagram\"](https://github.com/haeirene/2imd-webtech3-portfolio/tree/master/lab2/imdstagram)\r * [Link to screenshots of followed tutorials](https://github.com/haeirene/2imd-webtech3-portfolio/tree/master/lab2/screenshot)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haeirene/2imd-webtech3-portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haeirene/2imd-webtech3-portfolio/issues"
+  },
+  "homepage": "https://github.com/haeirene/2imd-webtech3-portfolio#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  }
+}
