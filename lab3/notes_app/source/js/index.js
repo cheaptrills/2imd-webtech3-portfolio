@@ -1,13 +1,15 @@
 class Note {
   constructor(title) {
     this.title = title;
-    // HINT🤩 this.element = this.createElement(title);
+    // HINT🤩
+    this.element = this.createElement(title);
   }
   
   createElement(title){
     let newNote = document.createElement('div');
     
-    // HINT🤩 a.addEventListener('click', this.remove.bind(newNote));
+    // HINT🤩
+    a.addEventListener('click', this.remove.bind(newNote));
     
     return newNote;
   }
