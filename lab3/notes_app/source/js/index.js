@@ -2,7 +2,8 @@ class Note {
   constructor(title) {
     this.title = title;
     // HINT🤩
-    this.element = this.createElement(title);
+    //createElement = creeëren van een nieuwe HTML element
+    this.element = this.createElement("div");
   }
   
   createElement(title){
