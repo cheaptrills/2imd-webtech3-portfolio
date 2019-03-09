@@ -75,22 +75,20 @@ class App {
     // something like note.add() in a loop would be nice
 
     if (localStorage) {
-      for (var i = 0; i < localStorage.length; i++) {
-          var key = localStorage.key(i);
-          if (key.substring(0, 4) == "todo") {
-              var item = localStorage.getItem(key);
-              var todoItem = JSON.parse(item);
-              todos.push(todoItem);
-         }
-         let note = new Note();
-         note.add();
+      for (let i = 0; i < localStorage.length; i++) {
+        let array = localStorage.getItem("entry");
+        let entryArray = JSON.parse(array);
+        entryArray.forEach(element => {
+          console.log(element);
+          let note = new Note();
+          note.title = element;
+        });
+        }
+      }
+      else {
+        console.log("Error: you don't have localStorage!");
       }
     }
-    else {
-        console.log("Error: you don't have localStorage!");
-    }
-
-  }
    
   createNote(e){
     // this function should create a new note by using the Note() class
