@@ -3,7 +3,7 @@ class Note {
     this.title = title;
     // HINT🤩
     //createElement = creeëren van een nieuwe HTML element
-    this.element = this.createElement("div");
+    this.element = this.createElement(title);
     console.log(this.element);
   }
   
@@ -41,9 +41,8 @@ class App {
     // HINT🤩
     // clicking the button should work
     // pressing the enter key should also work
-    this.btnAdd = document.querySelector('#bntAddNote');
-    //this.btnAdd.addEventListener("click", this.createNote.bind(this));
-    //this.btnAdd.addEventListener('click', () => this.click());
+    this.btnAdd = document.querySelector('#btnAddNote');
+    this.btnAdd.addEventListener("click", this.createNote.bind(this));
     // this.loadNotesFromStorage();
   }
   
