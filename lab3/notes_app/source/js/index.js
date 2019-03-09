@@ -85,10 +85,10 @@ class App {
          let note = new Note();
          note.add();
       }
-  }
-  else {
-      console.log("Error: you don't have localStorage!");
-  }
+    }
+    else {
+        console.log("Error: you don't have localStorage!");
+    }
 
   }
    
