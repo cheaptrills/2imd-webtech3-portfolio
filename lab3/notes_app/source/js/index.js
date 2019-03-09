@@ -20,7 +20,7 @@ class Note {
     newNote.classList.add("card");
     a.classList.add("card-remove");
     // HINT🤩
-    //a.addEventListener('click', this.remove.bind(newNote));
+    a.addEventListener('click', this.remove.bind(newNote));
     
     return newNote;
   }
@@ -41,8 +41,9 @@ class Note {
   remove(){
     // HINT🤩 the meaning of 'this' was set by bind() in the createElement function
     // in this function, 'this' will refer to the current note element
-
-  } 
+    let removedElement = this;
+    removedElement.style.display = "none";
+  }
 }
 
 class App {
