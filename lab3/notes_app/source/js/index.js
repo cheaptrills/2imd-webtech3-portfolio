@@ -11,13 +11,14 @@ class Note {
     let newNote = document.createElement('div');
     let paragraph = document.createElement('p');
     let a = document.createElement('a');
-
-    // .value gets the value of the input field
     let textInput = document.querySelector("#txtAddNote").value;
     let textLink = "Remove";
     paragraph.innerHTML = textInput + "\n";
     a.innerHTML = textLink;
-
+    a.href = "#";
+    document.querySelector(".notes").appendChild(newNote).appendChild(paragraph).appendChild(a);
+    newNote.classList.add("card");
+    a.classList.add("card-remove");
     // HINT🤩
     //a.addEventListener('click', this.remove.bind(newNote));
     
@@ -27,10 +28,7 @@ class Note {
   add(){
     // HINT🤩
     // this function should append the note to the screen somehow
-
-    document.querySelector(".notes").appendChild(newNote).appendChild(paragraph).appendChild(a);
-    newNote.classList.add("card");
-    a.classList.add("card-remove");
+    // .value gets the value of the input field
 
   }
   
