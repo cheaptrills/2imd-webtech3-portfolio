@@ -32,8 +32,6 @@ class Note{
   }
   
   saveToStorage(){
-    // HINT🤩
-
     /*
       If there are no entries, we create a new array where we store all of our entries. If there already is an array, we just add our entries to the already existing array.
     */
@@ -68,13 +66,30 @@ class App {
     // pressing the enter key should also work
     this.btnAdd = document.querySelector('#btnAddNote');
     this.btnAdd.addEventListener("click", this.createNote.bind(this));
-    // this.loadNotesFromStorage();
+    this.loadNotesFromStorage();
   }
   
   loadNotesFromStorage() {
     // HINT🤩
     // load all notes from storage here and add them to the screen
     // something like note.add() in a loop would be nice
+
+    if (localStorage) {
+      for (var i = 0; i < localStorage.length; i++) {
+          var key = localStorage.key(i);
+          if (key.substring(0, 4) == "todo") {
+              var item = localStorage.getItem(key);
+              var todoItem = JSON.parse(item);
+              todos.push(todoItem);
+         }
+         let note = new Note(this.id);
+         note.add();
+      }
+  }
+  else {
+      console.log("Error: you don't have localStorage!");
+  }
+
   }
    
   createNote(e){
