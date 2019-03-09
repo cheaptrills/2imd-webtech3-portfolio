@@ -33,13 +33,12 @@ class Note{
   
   saveToStorage(){
     // HINT🤩
-    // localStorage only supports strings, not arrays
-    // if you want to store arrays, look at JSON.parse and JSON.stringify
 
     /*
       If there are no entries, we create a new array where we store all of our entries. If there already is an array, we just add our entries to the already existing array.
     */
-      // JSON.stringify converts this.title to a String
+    // JSON.stringify converts this.title to a String
+    // localStorage only supports strings, not arrays
     let entryArray = localStorage.getItem('entry') ? JSON.parse(localStorage.getItem('entry')) : [];
     //setItem puts an key and value in localstorage
     localStorage.setItem('entry', JSON.stringify(entryArray));
