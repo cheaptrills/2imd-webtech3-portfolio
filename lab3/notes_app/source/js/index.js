@@ -11,9 +11,9 @@ class Note {
     let newNote = document.createElement('div');
     let paragraph = document.createElement('p');
     let a = document.createElement('a');
-    let textInput = document.querySelector("#txtAddNote").value;
+    this.title = document.querySelector("#txtAddNote").value;
     let textLink = "Remove";
-    paragraph.innerHTML = textInput + "\n";
+    paragraph.innerHTML = this.title + "\n";
     a.innerHTML = textLink;
     a.href = "#";
     document.querySelector(".notes").appendChild(newNote).appendChild(paragraph).appendChild(a);
@@ -36,6 +36,9 @@ class Note {
     // HINT🤩
     // localStorage only supports strings, not arrays
     // if you want to store arrays, look at JSON.parse and JSON.stringify
+
+    // JSON.stringify converts this.title to a String
+    window.localStorage.setItem('titel', JSON.stringify(this.title));
   }
   
   remove(){
@@ -43,6 +46,8 @@ class Note {
     // in this function, 'this' will refer to the current note element
     let removedElement = this;
     removedElement.style.display = "none";
+
+    //also remove of local storage
   }
 }
 
@@ -72,7 +77,7 @@ class App {
 
     // HINT🤩
     note.add();
-    // note.saveToStorage();
+    note.saveToStorage();
     // this.reset();
   }
   
