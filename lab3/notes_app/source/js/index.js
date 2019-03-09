@@ -104,6 +104,7 @@ class App {
   reset(){
     // this function should reset the form 
     document.querySelector("#txtAddNote").value = "";
+    document.querySelector("#txtAddNote").focus();
   }
   
 }
