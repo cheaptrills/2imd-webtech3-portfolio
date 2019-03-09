@@ -1,4 +1,4 @@
-class Note {
+class Note{
   constructor(title) {
     this.title = title;
     // HINT🤩
@@ -29,7 +29,6 @@ class Note {
     // HINT🤩
     // this function should append the note to the screen somehow
     // .value gets the value of the input field
-
   }
   
   saveToStorage(){
@@ -37,8 +36,17 @@ class Note {
     // localStorage only supports strings, not arrays
     // if you want to store arrays, look at JSON.parse and JSON.stringify
 
-    // JSON.stringify converts this.title to a String
-    window.localStorage.setItem('titel', JSON.stringify(this.title));
+    /*
+      If there are no entries, we create a new array where we store all of our entries. If there already is an array, we just add our entries to the already existing array.
+    */
+      // JSON.stringify converts this.title to a String
+    let entryArray = localStorage.getItem('entry') ? JSON.parse(localStorage.getItem('entry')) : [];
+    //setItem puts an key and value in localstorage
+    localStorage.setItem('entry', JSON.stringify(entryArray));
+    //push adds it to the already existing array
+    entryArray.push(this.title);
+    //we update the array
+    localStorage.setItem('entry', JSON.stringify(entryArray));
   }
   
   remove(){
@@ -53,6 +61,7 @@ class Note {
 
 class App {
   constructor() {
+    this.id = 0;
     console.log("👊🏼 The Constructor!");
   
     // HINT🤩
@@ -71,8 +80,8 @@ class App {
    
   createNote(e){
     // this function should create a new note by using the Note() class
-    
-    let note = new Note();
+    this.id++;
+    let note = new Note(this.id);
     console.log("KLIK");
 
     // HINT🤩
