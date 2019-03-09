@@ -82,7 +82,7 @@ class App {
               var todoItem = JSON.parse(item);
               todos.push(todoItem);
          }
-         let note = new Note(this.id);
+         let note = new Note();
          note.add();
       }
   }
@@ -94,8 +94,7 @@ class App {
    
   createNote(e){
     // this function should create a new note by using the Note() class
-    this.id++;
-    let note = new Note(this.id);
+    let note = new Note();
     console.log("KLIK");
 
     // HINT🤩
