@@ -8,5 +8,5 @@ At the moment of writing am I a 2IMD student of Thomas More University. Below yo
 * [Link to assignment "IMDstagram"](https://github.com/haeirene/2imd-webtech3-portfolio/tree/master/lab2/imdstagram)
 * [Link to screenshots of followed tutorials](https://github.com/haeirene/2imd-webtech3-portfolio/tree/master/lab2/screenshot)
 ## Lab 3
-* [Link to folder "lab3"](https://github.com/haeirene/2imd-webtech3-portfolio/tree/master/lab3)
+[Link to folder "lab3"](https://github.com/haeirene/2imd-webtech3-portfolio/tree/master/lab3)
 * [Link to codepen "Notes App"](https://codepen.io/haeirene/pen/moMVXP)
