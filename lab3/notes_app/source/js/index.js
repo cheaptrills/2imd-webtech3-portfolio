@@ -3,7 +3,7 @@ class Note{
     this.title = title;
     //createElement = creeëren van een nieuwe HTML element
     this.element = this.createElement(title);
-    console.log(this.element);
+    //console.log(this.element);
   }
   
   createElement(title){
@@ -20,6 +20,7 @@ class Note{
 
     /*
       promise = after a while it makes an asynchronous calculation
+
       After creating a note, it will check for a class card-remove to put an eventlistener on.
       Without the promise, an error will occur as it can't find the respective class.
     */
@@ -61,7 +62,7 @@ class Note{
     // in this function, 'this' will refer to the current note element
     let removedElement = this;
     removedElement.style.display = "none";
-    console.log("something should be deleted");
+    //console.log("delete");
 
     //also remove of local storage
   }
