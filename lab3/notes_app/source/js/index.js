@@ -32,6 +32,7 @@ class Note{
       });
     });
     
+    i++;
     return newNote;
   }
   
@@ -48,13 +49,13 @@ class Note{
     */
     // JSON.stringify converts this.title to a String
     // localStorage only supports strings, not arrays
-    let entryArray = localStorage.getItem('entry') ? JSON.parse(localStorage.getItem('entry')) : [];
+    let entryArray = localStorage.getItem('notes') ? JSON.parse(localStorage.getItem('notes')) : [];
     //setItem puts an key and value in localstorage
-    localStorage.setItem('entry', JSON.stringify(entryArray));
+    localStorage.setItem('notes', JSON.stringify(entryArray));
     //push adds it to the already existing array
     entryArray.push(this.title);
     //we update the array
-    localStorage.setItem('entry', JSON.stringify(entryArray));
+    localStorage.setItem('notes', JSON.stringify(entryArray));
   }
   
   remove(){
@@ -63,8 +64,12 @@ class Note{
     let removedElement = this;
     removedElement.style.display = "none";
     //console.log("delete");
-
     //also remove of local storage
+    //localStorage.removeItem("entry");
+    let array = JSON.parse(localStorage.getItem("notes"));
+    const index = array.indexOf(this);
+    array.splice(index, 1);
+    localStorage.setItem("notes", JSON.stringify(array));
   }
 }
 
@@ -94,7 +99,7 @@ class App {
 
     if (localStorage) {
       for (let i = 0; i < localStorage.length; i++) {
-        let array = localStorage.getItem("entry");
+        let array = localStorage.getItem("notes");
         let entryArray = JSON.parse(array);
         entryArray.forEach(element => {
           console.log(element);
