@@ -9,7 +9,7 @@ class Note{
   createElement(title){
     let newNote = document.createElement('div');
 
-    // .value gets the value of the input field
+    // .value = gets the value of the input field
     this.title = document.querySelector("#txtAddNote").value;
 
     //innerHTML = we change the existing html of the note with the newly added information
@@ -27,12 +27,11 @@ class Note{
 
     new Promise((resolve, reject) =>{
       setTimeout(() =>{
-        let a = document.querySelector('.card-remove');
-        a.addEventListener('click', this.remove.bind(newNote));
-      });
+        let a = document.getElementsByTagName('a');
+        a[i].addEventListener('click', this.remove.bind(newNote));
+        i++;
+      }, 1000);
     });
-    
-    i++;
     return newNote;
   }
   
@@ -63,11 +62,16 @@ class Note{
     // in this function, 'this' will refer to the current note element
     let removedElement = this;
     removedElement.style.display = "none";
-    //console.log("delete");
+    console.log("delete");
     //also remove of local storage
     //localStorage.removeItem("entry");
     let notesArray = JSON.parse(localStorage.getItem("notes"));
     const index = notesArray.indexOf(this);
+
+    /*
+      splice = adds/remove items to/from array
+      splice(index number, how many need to removed, ...)
+    */
     notesArray.splice(index, 1);
     localStorage.setItem("notes", JSON.stringify(notesArray));
   }
@@ -96,22 +100,19 @@ class App {
   loadNotesFromStorage() {
     // load all notes from storage here and add them to the screen
     // something like note.add() in a loop would be nice
+    const storedNotes = JSON.parse(localStorage.getItem("notes"));
 
-    if (localStorage) {
-      for (let i = 0; i < localStorage.length; i++) {
-        let array = localStorage.getItem("notes");
-        let entryArray = JSON.parse(array);
-        entryArray.forEach(element => {
-          console.log(element);
-          //let note = new Note(note.element);
-          //note.title = element;
-        });
-        }
-      }
-      else {
-        console.log("Error: you don't have localStorage!");
-      }
+    /*
+      If there are values stored in localhost read them out in a foreach loop.
+    */
+    if(storedNotes.length > 0){
+      storedNotes.forEach(notes => {
+        let note = new Note(notes);
+        console.log(notes);
+        note.add(note.title);
+      });
     }
+  }
    
   createNote(e){
     // this function should create a new note by using the Note() class
@@ -125,8 +126,8 @@ class App {
   
   reset(){
     // this function should reset the form 
-    document.querySelector("#txtAddNote").value = "";
-    document.querySelector("#txtAddNote").focus();
+    this.txtAdd.value = "";
+    this.txtAdd.focus();
   }
   
 }
