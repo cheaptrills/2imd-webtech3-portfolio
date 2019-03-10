@@ -61,12 +61,12 @@ class App {
     // pressing the enter key should also work
     this.btnAdd = document.querySelector('#btnAddNote');
     this.btnAdd.addEventListener("click", this.createNote.bind(this));
+    this.txtAdd = document.querySelector('#txtAddNote');
     
     // add note by pressing enter
-    document.querySelector("#txtAddNote").addEventListener("keyup", function(event) {
-      event.preventDefault();
-      if (event.keyCode === 13) {
-        this.btnAdd.addEventListener("click", this.createNote.bind(this));
+    this.txtAdd.addEventListener("keydown", event => {
+      if(event.keyCode === 13){
+        this.createNote();
       }
     });
 
