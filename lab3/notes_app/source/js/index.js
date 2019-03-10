@@ -10,7 +10,7 @@ class Note{
     let newNote = document.createElement('div');
 
     // .value = gets the value of the input field
-    this.title = document.querySelector("#txtAddNote").value;
+    this.title = title;
 
     //innerHTML = we change the existing html of the note with the newly added information
     newNote.innerHTML = `<p>${this.title}</p><br><a href="#" class="card-remove">Remove</a>`;
@@ -108,15 +108,16 @@ class App {
     if(storedNotes.length > 0){
       storedNotes.forEach(notes => {
         let note = new Note(notes);
-        console.log(notes);
-        note.add(note.title);
+        note.add();
+        console.log(i);
       });
     }
   }
    
   createNote(e){
     // this function should create a new note by using the Note() class
-    let note = new Note();
+    let text = document.querySelector("#txtAddNote").value;
+    let note = new Note(text);
     console.log("KLIK");
 
     note.add();
