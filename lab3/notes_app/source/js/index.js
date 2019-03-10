@@ -9,7 +9,6 @@ class Note{
   createElement(title){
     let newNote = document.createElement('div');
 
-    // .value = gets the value of the input field
     this.title = title;
 
     //innerHTML = we change the existing html of the note with the newly added information
@@ -50,10 +49,16 @@ class Note{
     // JSON.stringify converts this.title to a String
     // localStorage only supports strings, not arrays
     let notesArray = localStorage.getItem('notes') ? JSON.parse(localStorage.getItem('notes')) : [];
-    //setItem puts an key and value in localstorage
+    
+    //setItem = puts an key and value in localstorage
     localStorage.setItem('notes', JSON.stringify(notesArray));
     //push adds it to the already existing array
     //notesArray.push(this.title);
+
+    /*
+      You can't use push and slice with each other.
+      So I updated the push() to splice() so an item is still added to the localstorage array.
+    */
     notesArray.splice(i+1, 0, this.title);
     
     //we update the array
@@ -66,13 +71,11 @@ class Note{
     let removedElement = this;
     removedElement.style.display = "none";
 
-    console.log("delete");
-    
+    //console.log("delete");
   }
 
   removeFromStorage(){
     //also remove of local storage
-    //localStorage.removeItem("entry");
     let notesArray = JSON.parse(localStorage.getItem("notes"));
     const index = notesArray.indexOf(this);
     
@@ -80,8 +83,9 @@ class Note{
       splice = adds/remove items to/from array
       splice(index number, how many need to removed, ...)
     */
-    //console.log(textOfNote);
+
     notesArray.splice(index, 1);
+    //After removing an item, we update the localstorage update.
     localStorage.setItem("notes", JSON.stringify(notesArray));
   }
 }
@@ -90,8 +94,6 @@ class App {
   constructor() {
     console.log("👊🏼 The Constructor!");
   
-    // clicking the button should work
-    // pressing the enter key should also work
     this.btnAdd = document.querySelector('#btnAddNote');
     this.btnAdd.addEventListener("click", this.createNote.bind(this));
     this.txtAdd = document.querySelector('#txtAddNote');
@@ -124,6 +126,7 @@ class App {
    
   createNote(e){
     // this function should create a new note by using the Note() class
+    // .value = gets the value of the input field
     let text = document.querySelector("#txtAddNote").value;
     let note = new Note(text);
     console.log("KLIK");
