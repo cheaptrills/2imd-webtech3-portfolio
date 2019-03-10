@@ -29,6 +29,7 @@ class Note{
       setTimeout(() =>{
         let a = document.getElementsByTagName('a');
         a[i].addEventListener('click', this.remove.bind(newNote));
+        a[i].addEventListener('click', this.removeFromStorage.bind(this.title));
         i++;
       }, 1000);
     });
@@ -52,7 +53,9 @@ class Note{
     //setItem puts an key and value in localstorage
     localStorage.setItem('notes', JSON.stringify(notesArray));
     //push adds it to the already existing array
-    notesArray.push(this.title);
+    //notesArray.push(this.title);
+    notesArray.splice(i+1, 0, this.title);
+    
     //we update the array
     localStorage.setItem('notes', JSON.stringify(notesArray));
   }
@@ -62,17 +65,22 @@ class Note{
     // in this function, 'this' will refer to the current note element
     let removedElement = this;
     removedElement.style.display = "none";
+
     console.log("delete");
-    console.log(removedElement);
+    
+  }
+
+  removeFromStorage(){
     //also remove of local storage
     //localStorage.removeItem("entry");
     let notesArray = JSON.parse(localStorage.getItem("notes"));
     const index = notesArray.indexOf(this);
-
+    
     /*
       splice = adds/remove items to/from array
       splice(index number, how many need to removed, ...)
     */
+    //console.log(textOfNote);
     notesArray.splice(index, 1);
     localStorage.setItem("notes", JSON.stringify(notesArray));
   }
@@ -110,7 +118,6 @@ class App {
       storedNotes.forEach(notes => {
         let note = new Note(notes);
         note.add();
-        console.log(i);
       });
     }
   }
