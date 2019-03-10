@@ -8,7 +8,6 @@ class Note{
   
   createElement(title){
     let newNote = document.createElement('div');
-    let a = document.createElement('a');
 
     // .value gets the value of the input field
     this.title = document.querySelector("#txtAddNote").value;
@@ -16,11 +15,21 @@ class Note{
     //innerHTML = we change the existing html of the note with the newly added information
     newNote.innerHTML = `<p>${this.title}</p><br><a href="#" class="card-remove">Remove</a>`;
 
-    // Add classes to the note for layout
+    // Add class to the note for layout
     newNote.classList.add("card");
-    a.classList.add("card-remove");
 
-    a.addEventListener('click', this.remove.bind(newNote));
+    /*
+      promise = after a while it makes an asynchronous calculation
+      After creating a note, it will check for a class card-remove to put an eventlistener on.
+      Without the promise, an error will occur as it can't find the respective class.
+    */
+
+    new Promise((resolve, reject) =>{
+      setTimeout(() =>{
+        let a = document.querySelector('.card-remove');
+        a.addEventListener('click', this.remove.bind(newNote));
+      });
+    });
     
     return newNote;
   }
@@ -52,6 +61,7 @@ class Note{
     // in this function, 'this' will refer to the current note element
     let removedElement = this;
     removedElement.style.display = "none";
+    console.log("something should be deleted");
 
     //also remove of local storage
   }
@@ -115,4 +125,5 @@ class App {
   
 }
 
+let i = 0;
 let app = new App();
