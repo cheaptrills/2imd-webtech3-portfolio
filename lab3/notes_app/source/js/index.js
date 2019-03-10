@@ -63,6 +63,7 @@ class Note{
     let removedElement = this;
     removedElement.style.display = "none";
     console.log("delete");
+    console.log(removedElement);
     //also remove of local storage
     //localStorage.removeItem("entry");
     let notesArray = JSON.parse(localStorage.getItem("notes"));
