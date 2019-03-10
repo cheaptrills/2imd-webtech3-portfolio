@@ -8,16 +8,18 @@ class Note{
   
   createElement(title){
     let newNote = document.createElement('div');
-    let paragraph = document.createElement('p');
     let a = document.createElement('a');
+
+    // .value gets the value of the input field
     this.title = document.querySelector("#txtAddNote").value;
-    let textLink = "Remove";
-    paragraph.innerHTML = this.title + "\n";
-    a.innerHTML = textLink;
-    a.href = "#";
-    document.querySelector(".notes").appendChild(newNote).appendChild(paragraph).appendChild(a);
+
+    //innerHTML = we change the existing html of the note with the newly added information
+    newNote.innerHTML = `<p>${this.title}</p><br><a href="#" class="card-remove">Remove</a>`;
+
+    // Add classes to the note for layout
     newNote.classList.add("card");
     a.classList.add("card-remove");
+
     a.addEventListener('click', this.remove.bind(newNote));
     
     return newNote;
@@ -25,7 +27,9 @@ class Note{
   
   add(){
     // this function should append the note to the screen somehow
-    // .value gets the value of the input field
+
+    // .appendChild() = we add a child div (the note) to the notes div
+    document.querySelector(".notes").appendChild(this.element);
   }
   
   saveToStorage(){
@@ -83,8 +87,8 @@ class App {
         let entryArray = JSON.parse(array);
         entryArray.forEach(element => {
           console.log(element);
-          let note = new Note(note.element);
-          note.title = element;
+          //let note = new Note(note.element);
+          //note.title = element;
         });
         }
       }
