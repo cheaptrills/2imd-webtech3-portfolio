@@ -69,7 +69,10 @@ class Note{
     // the meaning of 'this' was set by bind() in the createElement function
     // in this function, 'this' will refer to the current note element
     let removedElement = this;
-    removedElement.style.display = "none";
+
+    //Fade out animation
+    removedElement.style.transition = "opacity 1s";
+    removedElement.style.opacity = 0;
 
     //console.log("delete");
   }
