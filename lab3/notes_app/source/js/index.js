@@ -49,13 +49,13 @@ class Note{
     */
     // JSON.stringify converts this.title to a String
     // localStorage only supports strings, not arrays
-    let entryArray = localStorage.getItem('notes') ? JSON.parse(localStorage.getItem('notes')) : [];
+    let notesArray = localStorage.getItem('notes') ? JSON.parse(localStorage.getItem('notes')) : [];
     //setItem puts an key and value in localstorage
-    localStorage.setItem('notes', JSON.stringify(entryArray));
+    localStorage.setItem('notes', JSON.stringify(notesArray));
     //push adds it to the already existing array
-    entryArray.push(this.title);
+    notesArray.push(this.title);
     //we update the array
-    localStorage.setItem('notes', JSON.stringify(entryArray));
+    localStorage.setItem('notes', JSON.stringify(notesArray));
   }
   
   remove(){
@@ -66,10 +66,10 @@ class Note{
     //console.log("delete");
     //also remove of local storage
     //localStorage.removeItem("entry");
-    let array = JSON.parse(localStorage.getItem("notes"));
-    const index = array.indexOf(this);
-    array.splice(index, 1);
-    localStorage.setItem("notes", JSON.stringify(array));
+    let notesArray = JSON.parse(localStorage.getItem("notes"));
+    const index = notesArray.indexOf(this);
+    notesArray.splice(index, 1);
+    localStorage.setItem("notes", JSON.stringify(notesArray));
   }
 }
 
