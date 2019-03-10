@@ -73,6 +73,9 @@ class Note{
     //Fade out animation
     removedElement.style.transition = "opacity 1s";
     removedElement.style.opacity = 0;
+    setTimeout(() =>{
+      removedElement.style.display = "none";
+    }, 1100);
 
     //console.log("delete");
   }
